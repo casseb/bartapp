@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Bartapp</string>
+    <string name="app_name">Bart App</string>
+    <string name="lbUsuario">Usuário</string>
+    <string name="lbSenha">Senha</string>
+    <string name="btEntrar">Entrar</string>
 </resources>

@@ -11,7 +11,61 @@
     tools:context="com.example.felipe.bartapp.MainActivity">
 
     <TextView
+        android:text="@string/lbUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginTop="56dp"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:layout_marginTop="27dp"
+        android:id="@+id/editTextUsuario"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/lbSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/editTextUsuario"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:layout_marginTop="41dp"
+        android:id="@+id/editTextSenha"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/editTextUsuario"
+        android:layout_alignStart="@+id/editTextUsuario" />
+
+    <Button
+        android:text="@string/btEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/btEntrar"
+        android:layout_below="@+id/editTextSenha"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/Resultado"
+        android:layout_below="@+id/btEntrar"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
