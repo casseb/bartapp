@@ -58,7 +58,9 @@
         android:layout_marginTop="30dp"
         android:id="@+id/btEntrar"
         android:layout_below="@+id/editTextSenha"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickEnter"
+        />
 
     <TextView
         android:text="TextView"
@@ -68,4 +70,5 @@
         android:id="@+id/Resultado"
         android:layout_below="@+id/btEntrar"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

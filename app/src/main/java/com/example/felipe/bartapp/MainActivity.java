@@ -19,14 +19,20 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
     }
 
-    public void onClickEnter(View view){
+    public void onClickEnter(View view) throws Exception {
 
         EditText txtUser = (EditText) findViewById(R.id.editTextUsuario);
         EditText txtPassword = (EditText) findViewById(R.id.editTextSenha);
         TextView resultArea = (TextView) findViewById(R.id.Resultado);
 
         String username = String.valueOf(txtUser.getText());
-        /*parei aqui kkkkkk*/
+        String password = String.valueOf(txtPassword.getText());
+
+        Connection connection = new Connection();
+
+        resultArea.setText(connection.login(username,password));
+
+        }
 
     }
-}
+
