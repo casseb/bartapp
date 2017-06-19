@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, SecondScreen.class);
 
+
         EditText txtUser = (EditText) findViewById(R.id.editTextUsuario);
         EditText txtPassword = (EditText) findViewById(R.id.editTextSenha);
         TextView resultArea = (TextView) findViewById(R.id.Resultado);
@@ -37,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
         Connection connection = new Connection();
 
         JSONObject jj = connection.login(username,password);
-        if (jj != null)
-            resultArea.setText(jj.getString("username"));
+        if (jj != null) {
+            intent.putExtra(EXTRA_MESSAGE, jj.getString("userName"));
+        }
         else
             resultArea.setText("Usuário Inválido");
 
-        if(jj.has("username"))startActivity(intent);
+        if(jj != null) startActivity(intent);
 
         }
 
