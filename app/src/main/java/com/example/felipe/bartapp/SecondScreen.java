@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class SecondScreen extends AppCompatActivity {
@@ -14,7 +15,7 @@ public class SecondScreen extends AppCompatActivity {
         setContentView(R.layout.activity_second_screen);
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        TextView textView = new TextView(this);
+        TextView textView = (TextView) findViewById(R.id.textView);
         textView.setTextSize(40);
         textView.setText(message);
     }
