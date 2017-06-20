@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         Connection connection = new Connection();
 
         JSONObject jj = connection.login(username,password);
-        if (jj != null) {
+        if (!jj.has("status")) {
             intent.putExtra(EXTRA_MESSAGE, jj.getString("userName"));
         }
         else
             resultArea.setText("Usuário Inválido");
 
-        if(jj != null) startActivity(intent);
+        if (!jj.has("status")) startActivity(intent);
 
         }
 
