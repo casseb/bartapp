@@ -35,7 +35,7 @@ public class Connection{
 
 
     // HTTP GET request
-    public String login(String userName,String password) throws Exception{
+    public JSONObject login(String userName,String password) throws Exception{
 
         String urlString = "https://lisawebservicetest.herokuapp.com/login";
 
@@ -48,7 +48,8 @@ public class Connection{
 
     }
 
-    public String request(String urlString, JSONObject postDataParams) throws Exception{
+    public JSONObject request(String urlString, JSONObject postDataParams) throws Exception{
+
 
 
         URL url = new URL(urlString);
@@ -86,11 +87,12 @@ public class Connection{
             }
 
             in.close();
-            return sb.toString();
+            JSONObject jj = new JSONObject(sb.toString());
+            return jj;
 
         }
         else {
-            return new String("false : "+responseCode);
+            return null;
         }
     }
 

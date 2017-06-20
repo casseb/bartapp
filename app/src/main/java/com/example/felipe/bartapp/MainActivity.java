@@ -1,5 +1,6 @@
 package com.example.felipe.bartapp;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
+    public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
 
     @Override
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickEnter(View view) throws Exception {
 
+        Intent intent = new Intent(this, SecondScreen.class);
+
+
         EditText txtUser = (EditText) findViewById(R.id.editTextUsuario);
         EditText txtPassword = (EditText) findViewById(R.id.editTextSenha);
         TextView resultArea = (TextView) findViewById(R.id.Resultado);
@@ -30,7 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
         Connection connection = new Connection();
 
-        resultArea.setText(connection.login(username,password));
+        JSONObject jj = connection.login(username,password);
+        if (!jj.has("status")) {
+            intent.putExtra(EXTRA_MESSAGE, jj.getString("userName"));
+        }
+        else
+            resultArea.setText("Usuário Inválido");
+
+        if(!jj.has("status")) startActivity(intent);
 
         }
 
